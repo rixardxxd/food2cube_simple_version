@@ -1,0 +1,132 @@
+<!--banner-->
+<div class="restaurant-banner">
+    <div class="pull-left">
+        <h3>No Deliever Fee</h3>
+        <h4>No Minimum Order</h4>
+    </div>
+    <img class="pull-right" src="static/mainSite/app/img/banner1.png">
+</div>
+
+<!-- content
+<div class="container">
+    <div class="choose-text">
+        <h3>What do you want for lunch?</h3>
+    </div>
+    <div class="restaurants">
+        <div class="restaurant-row">
+            <a href="#menu" class="restaurant" id="eg1" data-toggle="modal">
+                <img alt="eg1" class="restaurant-pic" src="static/mainSite/app/img/eg1.png">
+                <h5 class="text-center strong">QQ Noodle<br>Chinese</h5>
+            </a>
+            <a href="#menu" class="restaurant" id="eg2" data-toggle="modal">
+                <img alt="eg2" class="restaurant-pic" src="static/mainSite/app/img/eg2.png">
+                <h5 class="text-center strong">eg2<br>Japanese</h5>
+            </a>
+        </div>
+        <div class="restaurant-row">
+            <a href="#menu" class="restaurant" id="eg3" data-toggle="modal">
+                <img alt="eg3" class="restaurant-pic" src="static/mainSite/app/img/eg3.png">
+                <h5 class="text-center strong">eg3<br>Japanese</h5>
+            </a>
+            <a href="#menu" class="restaurant" id="eg4" data-toggle="modal">
+                <img alt="eg4" class="restaurant-pic" src="static/mainSite/app/img/eg4.png">
+                <h5 class="text-center strong">eg4<br>Indian</h5>
+            </a>
+        </div>
+    </div>
+</div>
+
+-->
+<!--
+<div class="container">
+    <div class="choose-text">
+        <h3>What do you want for lunch?</h3>
+    </div>
+<div class="restaurants">
+
+    <div ng-repeat="restaurantgroup in restaurants">
+        <div class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
+        <a class="restaurant" data-toggle="modal">
+          <img alt="{{restaurant.name}}" ng-src="{{restaurant.img}}" class="restaurant-pic">
+           <h5 class="text-center strong">{{ restaurant.name }}<br>{{ restaurant.category }}</h5>
+        </a>
+        </div>
+    </div>
+  </div>
+</div>
+
+-->
+
+<div class="container" >
+    <div class="choose-text">
+        <h3>What do you want for lunch?</h3>
+    </div>
+    <div class="restaurants">
+    <table>
+
+        <tr ng-repeat="restaurantgroup in restaurants">
+            <td class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
+                <a class="restaurant"  ng-click="open()">
+                    <img alt="{{restaurant.name}}" ng-src="{{restaurant.img}}" class="restaurant-pic">
+                    <h5 class="text-center strong">{{ restaurant.name }}<br>{{ restaurant.category }}</h5>
+                </a>
+            </td>
+        </tr>
+    </table>
+
+    <a href="#/checkout"> Check Out </a>
+    <br>
+    </div>
+
+
+
+<!--modal-->
+<!--menu-->
+
+<!--
+<script type="text/ng-template" id="myModalContent.html">
+<div class="modal fade" id="menu">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <table>
+                    <tr>
+                    {{ restaurant.name }}
+                    </tr>
+                    <tr ng-repeat="menu in restaurant.menus">
+                        {{ menu.name }}
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+-->
+
+
+<div >
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3>I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <button class="btn" ng-click="open()">Open me!</button>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>
+
+</div>

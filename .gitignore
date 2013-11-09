@@ -1,0 +1,9 @@
+venv
+*.pyc
+staticfiles
+.idea
+food2cube/.DS_Store
+gunicorn.error.log
+.DS_Store
+*.log
+personal.py
